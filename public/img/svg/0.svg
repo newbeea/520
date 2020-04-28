@@ -1,0 +1,20 @@
+<svg id="_0" data-name="0" xmlns="http://www.w3.org/2000/svg" width="3000" height="1728" viewBox="0 0 3000 1728">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #9a9a9a;
+        fill-opacity: 0;
+        stroke: #ff9d9d;
+        stroke-width: 30px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <filter id="f3" x="-110%" y="-110%" width="400%" height="400%">
+    <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0"></feOffset>
+    <feGaussianBlur result="blurOut" in="offOut" stdDeviation="20"></feGaussianBlur>
+    <feBlend in="SourceGraphic" in2="blurOut" mode="multiply"></feBlend>
+  </filter>
+  <path  filter="url(#f3)" stroke-linecap="round" id="形状_2" data-name="形状 2" class="cls-1" d="M1259.87,1217.39l235.62,235.62,235.63-235.62L1495.49,981.76Z"/>
+  <path  filter="url(#f3)" stroke-linecap="round" id="形状_2_拷贝" data-name="形状 2 拷贝" class="cls-1" d="M1848.89,1217.39l-353.4,353.39L1142.1,1217.39l353.39-353.4Z"/>
+</svg>

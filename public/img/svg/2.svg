@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="1728" viewBox="0 0 3000 1728">
+  <defs>
+    <style>
+      .cls {
+        fill: #9a9a9a;
+        fill-opacity: 0;
+        stroke: #ff9d9d;
+        fill-rule: evenodd;
+        stroke-width: 30px;
+      }
+
+
+    </style>
+  </defs>
+  <filter id="f3" x="-110%" y="-110%" width="400%" height="400%">
+    <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0"></feOffset>
+    <feGaussianBlur result="blurOut" in="offOut" stdDeviation="20"></feGaussianBlur>
+    <feBlend in="SourceGraphic" in2="blurOut" mode="multiply"></feBlend>
+  </filter>
+  <path filter="url(#f3)" stroke-linecap="round" id="形状_1" data-name="形状 1" class="cls" d="M1495.41,864.01l-58.7,58.632,183.92,183.718-125.22,125.08-183.92-183.71-168.26,168.08,293.48,293.16"/>
+  <path filter="url(#f3)" stroke-linecap="round" id="形状_1_拷贝" data-name="形状 1 拷贝" class="cls" d="M1436.71,1508.97l58.7-58.63-234.79-234.53,50.87-50.82,183.92,183.72,242.61-242.35L1495.41,864.01"/>
+</svg>
