@@ -23,6 +23,7 @@
 /* eslint-disable no-new */
 import { Component, Vue } from 'vue-property-decorator';
 import Vivus from 'vivus';
+import VConsole from 'vconsole';
 
 const IMAGE_NUM = 37;
 @Component
@@ -107,6 +108,7 @@ export default class HelloWorld extends Vue {
   }
 
   mounted(): void {
+    const vConsole = new VConsole();
     this.svg5 = new Vivus('svg-5', {
       duration: 100,
       file: '/img/svg/5.svg',
