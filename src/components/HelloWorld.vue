@@ -1,10 +1,13 @@
 <template>
   <div id="game">
+    <div id="question">隐藏的“爱你”</div>
+    <div id="stage">第一关</div>
+    <div id="tips">{{tips}}</div>
     <div id="anwser">{{anwser}}</div>
     <div id="necklace"
-      @touchstart.stop.prevent="onTouchstart"
-      @touchmove.stop.prevent="onTouchmove"
-      @touchend.stop.prevent="onTouchend"
+      @touchstart="onTouchstart"
+      @touchmove="onTouchmove"
+      @touchend="onTouchend"
     >
       <img
         v-for="(img, index) in imageList" :key="index"
@@ -15,7 +18,6 @@
       <div id="svg-2" class="svg"></div>
       <div id="svg-0" class="svg"></div>
     </div>
-    <div id="tips">左右拖动项链，你能找到隐藏的520么</div>
   </div>
 </template>
 
@@ -23,7 +25,7 @@
 /* eslint-disable no-new */
 import { Component, Vue } from 'vue-property-decorator';
 import Vivus from 'vivus';
-import VConsole from 'vconsole';
+// import VConsole from 'vconsole';
 
 const IMAGE_NUM = 37;
 @Component
@@ -50,7 +52,9 @@ export default class HelloWorld extends Vue {
 
   private playing = false;
 
-  private anwser = '';
+  private anwser = ' ';
+
+  private tips = '左右360°拖动项链，你能找到隐藏的520么';
 
   onTouchstart(e: TouchEvent): void {
     if (this.playing) return;
@@ -81,6 +85,7 @@ export default class HelloWorld extends Vue {
         this.last = 0;
         this.start = false;
         this.anwser = '520';
+        this.tips = '520被发现了，上滑进入第二关';
         this.svg0.play(() => {
           this.playing = false;
           this.svg0.reset();
@@ -108,7 +113,7 @@ export default class HelloWorld extends Vue {
   }
 
   mounted(): void {
-    const vConsole = new VConsole();
+    // const vConsole = new VConsole();
     this.svg5 = new Vivus('svg-5', {
       duration: 100,
       file: '/img/svg/5.svg',
@@ -144,27 +149,36 @@ export default class HelloWorld extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #game {
-  position: absolute;
-  bottom: 100px;
+  padding-top: 10vh;
+  #question {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  #stage {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
   #necklace {
     position: relative;
   }
+  img {
+    width: 100%;
+  }
+  .svg {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+  }
+  #anwser {
+    height: 100px;
+    font-size: 4rem;
+    color: #ff9d9d;
+  }
+  #tips {
+    margin-bottom: 30px;
+    color: #999;
+  }
 }
-img {
-  width: 100%;
-}
-.svg {
-  position: absolute;
-  top: 0;
-  left:0;
-  width: 100%;
-}
-#anwser {
-  font-size: 4rem;
-  margin-bottom: 3rem;
-  color: #ff9d9d;
-}
-#tips {
-  color: #999;
-}
+
 </style>

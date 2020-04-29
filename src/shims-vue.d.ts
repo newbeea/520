@@ -4,3 +4,4 @@ declare module '*.vue' {
   export default Vue;
 }
 declare module 'vivus';
+declare module 'clipboard';
