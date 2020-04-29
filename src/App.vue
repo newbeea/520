@@ -9,10 +9,10 @@
       </swiper-slide>
       <swiper-slide>
         <div class="title">探索更多隐藏的爱意</div>
-        <img class="more" src="//cdn.malianghang.com/product/5cda767c7b968a00759c946d.jpg" alt="">
-        <img class="more" src="//cdn.malianghang.com/product/593a8558128fe1006acbc6fd_1.jpg" alt="">
-        <img class="more" src="//cdn.malianghang.com/product/5b485e3cfe88c200355016e8.jpg" alt="">
-        <img class="more" src="//cdn.malianghang.com/product/5c2dfee0fb4ffe005fe406ae.jpg" alt="">
+        <img class="more" src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/520.jpg">
+        <img class="more" src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/shadow.jpg">
+        <img class="more" src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/coordinate.jpg">
+        <img class="more" src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/sound.jpg">
       </swiper-slide>
     </swiper>
   </div>

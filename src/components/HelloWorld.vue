@@ -30,7 +30,7 @@ import Vivus from 'vivus';
 const IMAGE_NUM = 37;
 @Component
 export default class HelloWorld extends Vue {
-  private imageList = new Array(IMAGE_NUM).fill('').map((item, index) => `/img/untitled.${index + 1}.jpg`);
+  private imageList = new Array(IMAGE_NUM).fill('').map((item, index) => `//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/untitled.${index + 1}.jpg`);
 
   private imageMap = Object.fromEntries(this.imageList.map((item, index) => [index, item]));
 
