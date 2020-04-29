@@ -5,10 +5,10 @@
         <HelloWorld/>
       </swiper-slide>
       <swiper-slide>
-        <SecondStage init-tip="你能找到隐藏的“爱你”么"/>
+        <SecondStage/>
       </swiper-slide>
       <swiper-slide>
-        <div class="title">探索更多隐藏的“爱”</div>
+        <div class="title">探索更多隐藏的爱意</div>
         <img class="more" src="//cdn.malianghang.com/product/5cda767c7b968a00759c946d.jpg" alt="">
         <img class="more" src="//cdn.malianghang.com/product/593a8558128fe1006acbc6fd_1.jpg" alt="">
         <img class="more" src="//cdn.malianghang.com/product/5b485e3cfe88c200355016e8.jpg" alt="">

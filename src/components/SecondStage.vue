@@ -50,10 +50,7 @@ new ClipboardJS('.btn');
   },
 })
 export default class HelloWorld extends Vue {
-  @Prop({ default: 'default value' })
-  initTip!: string;
-
-  private tips = this.initTip;
+  private tips = '破译隐藏的“爱你”暗号';
 
   private anwser = '';
 
@@ -74,7 +71,7 @@ export default class HelloWorld extends Vue {
 
   onInput(): void {
     if (this.anwser.toLowerCase() === 'lvu') {
-      this.result = '“LVU”(love you)被你发现了!';
+      this.result = '“LVU”(love you)被你发现了!上滑探索更多';
     } else if (this.anwser.length === 3) {
       this.result = '不对哦';
     }

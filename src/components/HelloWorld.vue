@@ -54,7 +54,7 @@ export default class HelloWorld extends Vue {
 
   private anwser = ' ';
 
-  private tips = '左右360°拖动项链，你能找到隐藏的520么';
+  private tips = '左右360°拖动项链，找到隐藏的520';
 
   onTouchstart(e: TouchEvent): void {
     if (this.playing) return;
@@ -85,7 +85,7 @@ export default class HelloWorld extends Vue {
         this.last = 0;
         this.start = false;
         this.anwser = '520';
-        this.tips = '520被发现了，上滑进入第二关';
+        this.tips = '520被你发现了，上滑进入第二关';
         this.svg0.play(() => {
           this.playing = false;
           this.svg0.reset();
