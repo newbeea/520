@@ -1,5 +1,4 @@
-<template lang="pug">
-#
+<template>
   <div id="app">
     <swiper ref="mySwiper" :options="swiperOptions" class="my-swiper">
       <swiper-slide>

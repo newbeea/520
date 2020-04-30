@@ -46,11 +46,11 @@ export default class HelloWorld extends Vue {
 
   private offset = 4;
 
-  private svg5: any;
+  private svg5!: Vivus;
 
-  private svg2: any;
+  private svg2!: Vivus;
 
-  private svg0: any;
+  private svg0!: Vivus;
 
   private last = 0;
 
@@ -80,7 +80,7 @@ export default class HelloWorld extends Vue {
         this.last = 5;
         this.start = false;
         this.anwser = '5';
-        this.svg5.play(() => {
+        this.svg5.play(1, () => {
           this.playing = false;
           this.svg5.reset();
         });
@@ -92,7 +92,7 @@ export default class HelloWorld extends Vue {
         this.start = false;
         this.anwser = '520';
         this.tips = '520被你发现了，上滑进入第二关';
-        this.svg0.play(() => {
+        this.svg0.play(1, () => {
           this.playing = false;
           this.svg0.reset();
         });
@@ -105,7 +105,7 @@ export default class HelloWorld extends Vue {
         this.playing = true;
         this.last = 2;
         this.anwser = '52';
-        this.svg2.play(() => {
+        this.svg2.play(1, () => {
           this.playing = false;
           this.svg2.reset();
         });

@@ -2,25 +2,27 @@
   <div id="game">
     <div id="question">隐藏的“爱你”</div>
     <div id="stage">第二关</div>
-    <div id="tips">{{tips}}</div>
+    <div id="tips">{{ tips }}</div>
     <swiper ref="mySwiper" :options="swiperOptions" class="my-swiper2">
       <swiper-slide>
         <div class="helper">你听说过摩斯密码么</div>
-        <img src="/img/morse.png" alt="">
+        <img src="/img/morse.png" alt="" />
       </swiper-slide>
       <swiper-slide>
         <div class="helper">发现项链中的摩斯密码了么</div>
-        <img src="/img/1.png" alt="">
+        <img src="/img/1.png" alt="" />
       </swiper-slide>
       <swiper-slide>
         <div class="helper">破译一下是哪三个爱意字母</div>
-        <img src="/img/2.png" alt="">
+        <img src="/img/2.png" alt="" />
       </swiper-slide>
       <swiper-slide>
         <div id="detail">
           <div class="helper">猜不出来，看答案</div>
-          <button class="btn"
-            data-clipboard-text="fu至这段话€NhcH1N700eB€转移至氵匋宝或點击链街https://m.tb.cn/h.Viw6hpZ?sm=d5299a 至瀏..覽..噐【马良行摩斯密码定制项链925纯银吊坠男锁骨链女简约颈链情侣礼品】">
+          <button
+            class="btn"
+            data-clipboard-text="fu至这段话€NhcH1N700eB€转移至氵匋宝或點击链街https://m.tb.cn/h.Viw6hpZ?sm=d5299a 至瀏..覽..噐【马良行摩斯密码定制项链925纯银吊坠男锁骨链女简约颈链情侣礼品】"
+          >
             点击复制通关码
           </button>
           <div class="helper">打开手机淘宝详细解密</div>
@@ -29,8 +31,13 @@
     </swiper>
     <div id="got">
       <div>我懂了</div>
-      <input type="text" v-model="anwser" @input="onInput" placeholder="点击输入答案">
-      <div>{{result}}</div>
+      <input
+        type="text"
+        v-model="anwser"
+        @input="onInput"
+        placeholder="点击输入答案"
+      />
+      <div>{{ result }}</div>
     </div>
   </div>
 </template>
@@ -124,5 +131,4 @@ export default class HelloWorld extends Vue {
     height: 100px;
   }
 }
-
 </style>
