@@ -2,18 +2,20 @@
   <div id="game">
     <div id="question">隐藏的“爱你”</div>
     <div id="stage">第一关</div>
-    <div id="tips">{{tips}}</div>
-    <div id="anwser">{{anwser}}</div>
-    <div id="necklace"
+    <div id="tips">{{ tips }}</div>
+    <div id="anwser">{{ anwser }}</div>
+    <div
+      id="necklace"
       @touchstart="onTouchstart"
       @touchmove="onTouchmove"
       @touchend="onTouchend"
     >
       <img
-        v-for="(img, index) in imageList" :key="index"
+        v-for="(img, index) in imageList"
+        :key="index"
         v-show="index == current"
         :src="img"
-      >
+      />
       <div id="svg-5" class="svg"></div>
       <div id="svg-2" class="svg"></div>
       <div id="svg-0" class="svg"></div>
@@ -30,7 +32,11 @@ import Vivus from 'vivus';
 const IMAGE_NUM = 37;
 @Component
 export default class HelloWorld extends Vue {
-  private imageList = new Array(IMAGE_NUM).fill('').map((item, index) => `//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/untitled.${index + 1}.jpg`);
+  private imageList = new Array(IMAGE_NUM)
+    .fill('')
+    .map(
+      (item, index) => `//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/untitled.${index + 1}.jpg`,
+    );
 
   private imageMap = Object.fromEntries(this.imageList.map((item, index) => [index, item]));
 
@@ -167,7 +173,7 @@ export default class HelloWorld extends Vue {
   .svg {
     position: absolute;
     top: 0;
-    left:0;
+    left: 0;
     width: 100%;
   }
   #anwser {
@@ -180,5 +186,4 @@ export default class HelloWorld extends Vue {
     color: #999;
   }
 }
-
 </style>

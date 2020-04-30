@@ -1,18 +1,31 @@
-<template>
+<template lang="pug">
+#
   <div id="app">
     <swiper ref="mySwiper" :options="swiperOptions" class="my-swiper">
       <swiper-slide>
-        <HelloWorld/>
+        <HelloWorld />
       </swiper-slide>
       <swiper-slide>
-        <SecondStage/>
+        <SecondStage />
       </swiper-slide>
       <swiper-slide>
         <div class="title">探索更多隐藏的爱意</div>
-        <img class="more" src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/520.jpg">
-        <img class="more" src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/shadow.jpg">
-        <img class="more" src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/coordinate.jpg">
-        <img class="more" src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/sound.jpg">
+        <img
+          class="more"
+          src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/520.jpg"
+        />
+        <img
+          class="more"
+          src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/shadow.jpg"
+        />
+        <img
+          class="more"
+          src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/coordinate.jpg"
+        />
+        <img
+          class="more"
+          src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/sound.jpg"
+        />
       </swiper-slide>
     </swiper>
   </div>
@@ -36,12 +49,15 @@ import 'swiper/css/swiper.css';
 export default class App extends Vue {
   private swiperOptions = {
     direction: 'vertical',
+    touchAngle: 20,
+    shortSwipes: false,
   };
 }
 </script>
 
 <style lang="scss">
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
 }

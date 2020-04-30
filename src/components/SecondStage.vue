@@ -37,7 +37,7 @@
 
 <script lang="ts">
 /* eslint-disable no-new */
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper/src/index';
 import 'swiper/css/swiper.css';
 import ClipboardJS from 'clipboard';
@@ -59,11 +59,12 @@ export default class HelloWorld extends Vue {
   private swiperOptions = {
     effect: 'coverflow',
     grabCursor: true,
+    centeredSlides: true,
     slidesPerView: 'auto',
     coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
+      rotate: 40,
+      stretch: 10,
+      depth: 200,
       modifier: 1,
       slideShadows: false,
     },
