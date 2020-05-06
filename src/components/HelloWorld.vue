@@ -20,6 +20,7 @@
       <div id="svg-2" class="svg"></div>
       <div id="svg-0" class="svg"></div>
     </div>
+    <img v-show="pass" class="down" src="../assets/images/up.png" />
   </div>
 </template>
 
@@ -60,6 +61,8 @@ export default class HelloWorld extends Vue {
 
   private anwser = ' ';
 
+  private pass = false;
+
   private tips = '左右360°拖动项链，找到隐藏的520';
 
   onTouchstart(e: TouchEvent): void {
@@ -92,6 +95,7 @@ export default class HelloWorld extends Vue {
         this.start = false;
         this.anwser = '520';
         this.tips = '520被你发现了，上滑进入第二关';
+        this.pass = true;
         this.svg0.play(1, () => {
           this.playing = false;
           this.svg0.reset();
@@ -166,9 +170,9 @@ export default class HelloWorld extends Vue {
   }
   #necklace {
     position: relative;
-  }
-  img {
-    width: 100%;
+    img {
+      width: 100%;
+    }
   }
   .svg {
     position: absolute;

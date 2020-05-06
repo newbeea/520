@@ -55,6 +55,9 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
 html,
 body {
   margin: 0;
@@ -78,6 +81,30 @@ body {
         width: 48%;
       }
     }
+  }
+  .down {
+    z-index: 100;
+    width: 40px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -20px;
+    animation: start 1.5s infinite ease-in-out;
+  }
+}
+@keyframes start {
+  0%,
+  30% {
+    opacity: 0;
+    transform: translate(0, 10px);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, -8px);
   }
 }
 </style>

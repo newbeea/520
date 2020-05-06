@@ -39,6 +39,7 @@
       />
       <div>{{ result }}</div>
     </div>
+    <img v-show="pass" class="down" src="../assets/images/up.png" />
   </div>
 </template>
 
@@ -63,6 +64,8 @@ export default class HelloWorld extends Vue {
 
   private result = '';
 
+  private pass = false;
+
   private swiperOptions = {
     effect: 'coverflow',
     grabCursor: true,
@@ -80,6 +83,7 @@ export default class HelloWorld extends Vue {
   onInput(): void {
     if (this.anwser.toLowerCase() === 'lvu') {
       this.result = '“LVU”(love you)被你发现了!上滑探索更多';
+      this.pass = true;
     } else if (this.anwser.length === 3) {
       this.result = '不对哦';
     }
@@ -91,6 +95,8 @@ export default class HelloWorld extends Vue {
 <style scoped lang="scss">
 #game {
   padding-top: 10vh;
+  position: relative;
+  height: 100vh;
   #question {
     font-size: 1.5rem;
     margin-bottom: 20px;
