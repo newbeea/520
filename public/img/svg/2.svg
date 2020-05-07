@@ -4,7 +4,7 @@
       .cls {
         fill: #9a9a9a;
         fill-opacity: 0;
-        stroke: #ff9d9d;
+        stroke: #ff65b6;
         fill-rule: evenodd;
         stroke-width: 30px;
       }

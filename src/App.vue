@@ -49,7 +49,6 @@ export default class App extends Vue {
   private swiperOptions = {
     direction: 'vertical',
     touchAngle: 20,
-    shortSwipes: false,
   };
 }
 </script>
