@@ -14,7 +14,7 @@
       </swiper-slide>
       <swiper-slide>
         <div class="helper">破译一下是哪三个爱意字母</div>
-        <img src="/img/2.png" alt="" />
+        <img src="/img/22.png" alt="" />
       </swiper-slide>
       <swiper-slide>
         <div id="detail">

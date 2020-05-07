@@ -1,6 +1,6 @@
 <template>
   <div id="game">
-    <img src="/img/heart.png" alt="" id="heart" />
+    <img src="../assets/images/heart.png" alt="" id="heart" />
     <div id="code">__爱的密码__</div>
     <div id="question">破译隐藏的"爱你"暗号</div>
     <div id="stage">第一关</div>
@@ -8,19 +8,19 @@
     <div id="bottom" :style="{ bottom: width / 4 + 'px' }">
       <div id="anwser">
         <img
-          src="/img/5.png"
+          src="../assets/images/5.png"
           alt=""
           id="a5"
           :class="{ gray: anwser.length < 1 }"
         />
         <img
-          src="/img/2.png"
+          src="../assets/images/2.png"
           alt=""
           id="a2"
           :class="{ gray: anwser.length < 2 }"
         />
         <img
-          src="/img/0.png"
+          src="../assets/images/0.png"
           alt=""
           id="a0"
           :class="{ gray: anwser.length < 3 }"
@@ -55,13 +55,14 @@ import { Component, Vue } from 'vue-property-decorator';
 import Vivus from 'vivus';
 // import VConsole from 'vconsole';
 
+const { BASE_URL } = process.env;
 const IMAGE_NUM = 37;
 @Component
 export default class HelloWorld extends Vue {
   private imageList = new Array(IMAGE_NUM)
     .fill('')
     .map(
-      (item, index) => `//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/untitled.${index + 1}.png`,
+      (item, index) => `${BASE_URL}img/untitled.${index + 1}.png`,
     );
 
   private imageMap = Object.fromEntries(this.imageList.map((item, index) => [index, item]));
@@ -154,21 +155,21 @@ export default class HelloWorld extends Vue {
     // const vConsole = new VConsole();
     this.svg5 = new Vivus('svg-5', {
       duration: 100,
-      file: '/img/svg/5.svg',
+      file: `${BASE_URL}img/svg/5.svg`,
       delay: 0,
       animTimingFunction: Vivus.EASE_OUT,
       start: 'manual',
     });
     this.svg2 = new Vivus('svg-2', {
       duration: 100,
-      file: '/img/svg/2.svg',
+      file: `${BASE_URL}img/svg/2.svg`,
       delay: 0,
       animTimingFunction: Vivus.EASE_OUT,
       start: 'manual',
     });
     this.svg0 = new Vivus('svg-0', {
       duration: 100,
-      file: '/img/svg/0.svg',
+      file: `${BASE_URL}img/svg/0.svg`,
       delay: 0,
       animTimingFunction: Vivus.EASE_OUT,
       start: 'manual',
@@ -189,7 +190,7 @@ export default class HelloWorld extends Vue {
 #game {
   padding-top: 5vh;
   height: 100%;
-  background-image: url("/img/bg.jpg");
+  background-image: url("../assets/images/bg.jpg");
   background-size: 100% 100%;
   #question {
     font-size: 1.8rem;
