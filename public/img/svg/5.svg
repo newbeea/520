@@ -1,7 +1,7 @@
 <svg id="_5" data-name="5" xmlns="http://www.w3.org/2000/svg" width="3000" height="1728" viewBox="0 0 3000 1728">
   <defs>
     <style>
-      .cls-1 {
+      .cls-5 {
         fill: #9a9a9a;
         fill-opacity: 0;
         stroke: #ff65b6;
@@ -15,6 +15,6 @@
     <feGaussianBlur result="blurOut" in="offOut" stdDeviation="20"></feGaussianBlur>
     <feBlend in="SourceGraphic" in2="blurOut" mode="multiply"></feBlend>
   </filter>
-  <path  filter="url(#f3)" stroke-linecap="round" id="形状_1" data-name="形状 1" class="cls-1" d="M1555.01,1512.14L1495,1452l235-235-49.34-50-184.54,184.33-243.43-243.16L1496.12,865"/>
-  <path  filter="url(#f3)" stroke-linecap="round" id="形状_1_拷贝" data-name="形状 1 拷贝" class="cls-1" d="M1496.12,865l58.89,58.831L1370.48,1108.17l125.64,125.5,184.54-184.33,168.83,168.64-294.48,294.16"/>
+  <path  filter="url(#f3)" stroke-linecap="round" id="形状_1" data-name="形状 1" class="cls-5" d="M1555.01,1512.14L1495,1452l235-235-49.34-50-184.54,184.33-243.43-243.16L1496.12,865"/>
+  <path  filter="url(#f3)" stroke-linecap="round" id="形状_1_拷贝" data-name="形状 1 拷贝" class="cls-5" d="M1496.12,865l58.89,58.831L1370.48,1108.17l125.64,125.5,184.54-184.33,168.83,168.64-294.48,294.16"/>
 </svg>
