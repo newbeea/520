@@ -8,18 +8,29 @@ module.exports = {
       importWorkboxFrom: 'local',
       skipWaiting: true,
       clientsClaim: true,
-      exclude: [/\.(?:png|jpg|jpeg|svg)$/],
+      exclude: [/runtime\/.*\.(?:png)$/, /\.(?:html)$/],
       runtimeCaching: [
         {
           // To match cross-origin requests, use a RegExp that matches
           // the start of the origin:
-          urlPattern: /^http.*\.(?:png|jpg|jpeg|svg)$/,
-          handler: 'staleWhileRevalidate',
+          urlPattern: /^http.*\/runtime\/.*\.(?:png)$/,
+          handler: 'StaleWhileRevalidate',
           options: {
-            // cacheName: 'image',
+            cacheName: 'runtime-image',
             // expiration: {
             //   maxAgeSeconds: 10,
             // },
+            // Configure which responses are considered cacheable.
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
+          },
+        },
+        {
+          urlPattern: /\/$||\.(?:html)$/,
+          handler: 'NetworkFirst',         
+          options: {
+            cacheName: 'index',
             // Configure which responses are considered cacheable.
             cacheableResponse: {
               statuses: [0, 200],

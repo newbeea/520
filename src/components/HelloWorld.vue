@@ -62,7 +62,7 @@ export default class HelloWorld extends Vue {
   private imageList = new Array(IMAGE_NUM)
     .fill('')
     .map(
-      (item, index) => `${BASE_URL}img/untitled.${index + 1}.png`,
+      (item, index) => `${BASE_URL}runtime/untitled.${index + 1}.png`,
     );
 
   private imageMap = Object.fromEntries(this.imageList.map((item, index) => [index, item]));
