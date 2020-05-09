@@ -4,8 +4,6 @@ module.exports = {
     sourceMap: true,
   },
   pwa: {
-    themeColor: '#ff65b6',
-    startUrl: 'https://520.malianghang.com/',
     workboxOptions: {
       importWorkboxFrom: 'local',
       skipWaiting: true,
