@@ -4,11 +4,13 @@ module.exports = {
     sourceMap: true,
   },
   pwa: {
+    themeColor: '#ff65b6',
+    startUrl: 'https://520.malianghang.com/',
     workboxOptions: {
       importWorkboxFrom: 'local',
       skipWaiting: true,
       clientsClaim: true,
-      exclude: [/runtime\/.*\.(?:png)$/, /\.(?:html)$/],
+      // exclude: [/runtime\/.*\.(?:png)$/, /\.(?:html)$/],
       runtimeCaching: [
         {
           // To match cross-origin requests, use a RegExp that matches
@@ -28,7 +30,7 @@ module.exports = {
         },
         {
           urlPattern: /\/$||\.(?:html)$/,
-          handler: 'NetworkFirst',         
+          handler: 'NetworkFirst',
           options: {
             cacheName: 'index',
             // Configure which responses are considered cacheable.
