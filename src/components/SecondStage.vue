@@ -8,6 +8,9 @@
         <img src="../assets/images/1.jpg" alt="" />
       </swiper-slide>
       <swiper-slide>
+        <img src="../assets/images/520-model.jpg" alt="" />
+      </swiper-slide>
+      <swiper-slide>
         <img src="../assets/images/2.jpg" alt="" />
       </swiper-slide>
       <swiper-slide>
@@ -27,7 +30,8 @@
             <div class="ticket">您抽中了100元单品券</div>
             <div class="result">{{ copyTips }}</div>
 
-            <div class="open">下面打开手机淘宝探索答案</div>
+            <div class="open">打开手机淘宝</div>
+            <div class="open">探索答案</div>
           </div>
         </div>
       </swiper-slide>
@@ -42,7 +46,10 @@
         @input="onInput"
         placeholder="点击输入答案"
       />
-      <div>{{ result }}</div>
+      <div v-if="!pass">{{ result }}</div>
+      <div v-else>
+        <div>“LVU”(love you)被你发现了，上滑探索更多</div>
+      </div>
     </div>
     <img v-show="pass" class="down" src="../assets/images/up.png" />
   </div>
@@ -73,7 +80,7 @@ export default class HelloWorld extends Vue {
 
   private copy = false;
 
-  private copyTips = '通关码复制成功!';
+  private copyTips = '通关码已经复制成功!';
 
   private swiperOptions = {
     effect: 'coverflow',
@@ -108,7 +115,7 @@ export default class HelloWorld extends Vue {
       if (anwser !== 'lvu') {
         this.result = '不对哦';
       } else {
-        this.result = '“LVU”(love you)被你发现了!上滑探索更多';
+        this.result = '“LVU”(love you)被你发现了上滑探索更多';
         this.pass = true;
       }
     }
@@ -158,8 +165,10 @@ export default class HelloWorld extends Vue {
           position: absolute;
           left: 0;
           width: 100%;
-          bottom: 100px;
+          bottom: 80px;
+          color: #666;
           .ticket {
+            // color: #fff;
             margin-bottom: 10px;
           }
         }
@@ -172,14 +181,16 @@ export default class HelloWorld extends Vue {
     bottom: 0px;
     width: 100%;
     z-index: 1;
+    padding-top: 6px;
     height: 100px;
     .input {
-      margin-top: 10px;
+      margin-top: 6px;
       border: none;
       line-height: 30px;
       border-radius: 60px;
       padding-left: 10px;
       text-align: center;
+      margin-bottom: 3px;
     }
   }
 }
