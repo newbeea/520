@@ -52,9 +52,9 @@ export default class App extends Vue {
   };
 
   private share = {
-    wstitle: '',
+    wstitle: '破译隐藏的“爱你”暗号',
     wsdesc: '',
-    wslink: '',
+    wslink: 'https://520.malianghang.com',
     wsimg: '',
   }
 
