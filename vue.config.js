@@ -1,5 +1,10 @@
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '//cdn520.malianghang.com/' : '/',
+  configureWebpack: {
+    externals: {
+      wx: 'jWeixin',
+    },
+  },
   css: {
     sourceMap: true,
   },

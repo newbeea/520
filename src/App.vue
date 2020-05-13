@@ -36,7 +36,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from './components/HelloWorld.vue';
 import SecondStage from './components/SecondStage.vue';
 import 'swiper/css/swiper.css';
-
+import configShare from './share';
 @Component({
   components: {
     Swiper,
@@ -50,6 +50,29 @@ export default class App extends Vue {
     direction: 'vertical',
     touchAngle: 20,
   };
+
+  private share = {
+    wstitle: '',
+    wsdesc: '',
+    wslink: '',
+    wsimg: '',
+  }
+
+  mounted() {
+    const xml = new XMLHttpRequest();
+    xml.open('get', '/wechat-api/config');
+    xml.onreadystatechange = () => {
+      if (xml.readyState === 4 && xml.status === 200) {
+        try {
+          const config = JSON.parse(xml.responseText);
+          configShare(config, this.share);
+        } catch {
+          console.log('config failed');
+        }
+      }
+    };
+    xml.send();
+  }
 }
 </script>
 
