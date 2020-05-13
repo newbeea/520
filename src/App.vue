@@ -43,7 +43,7 @@
               <img class="more" src="./assets/images/coordinate.jpg"
             /></a>
             <a
-              href="http://www.malianghang.com/shop/soundwave-customize-ring/customizer/material?material=silver"
+              href="http://www.malianghang.com/shop/soundwave-customize-ring/summary/material?material=silver"
               ><img class="more" src="./assets/images/sound.jpeg"
             /></a>
           </div>
@@ -80,7 +80,7 @@ export default class App extends Vue {
     wstitle: '520闯关——你能破译所有隐藏的表白暗号么',
     wsdesc: '聪明的你一定懂我',
     wslink: 'https://520.malianghang.com',
-    wsimg: 'https://cdn520.malianghang.com/img/share.jpg',
+    wsimg: 'https://520.malianghang.com/img/share.jpg',
   }
 
   mounted() {

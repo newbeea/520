@@ -27,7 +27,7 @@
             <div class="ticket">您抽中了100元单品券</div>
             <div class="result">{{ copyTips }}</div>
 
-            <div class="open">打开手机淘宝探索答案</div>
+            <div class="open">下面打开手机淘宝探索答案</div>
           </div>
         </div>
       </swiper-slide>
