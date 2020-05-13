@@ -2,29 +2,54 @@
   <div id="app">
     <swiper ref="mySwiper" :options="swiperOptions" class="my-swiper">
       <swiper-slide>
+        <img class="bg2" src="./assets/images/bg2.png" alt="" />
+        <img src="./assets/images/heart.png" alt="" class="heart" />
         <HelloWorld />
       </swiper-slide>
       <swiper-slide>
+        <img class="bg2" src="./assets/images/bg2.png" alt="" />
         <SecondStage />
       </swiper-slide>
       <swiper-slide>
+        <img class="bg2" src="./assets/images/bg2.png" alt="" />
         <div class="title">探索更多隐藏的爱意</div>
-        <img
-          class="more"
-          src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/520.jpg"
-        />
-        <img
-          class="more"
-          src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/shadow.jpg"
-        />
-        <img
-          class="more"
-          src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/coordinate.jpg"
-        />
-        <img
-          class="more"
-          src="//malianghang.oss-cn-zhangjiakou.aliyuncs.com/520/sound.jpg"
-        />
+        <div class="container">
+          <div class="left">
+            <a
+              href="http://www.malianghang.com/shop/infinite-520-necklace/summary?material=silver"
+            >
+              <img class="more" src="./assets/images/520.jpg" />
+            </a>
+            <a
+              href="http://www.malianghang.com/shop/morse-iloveu-necklace/summary/material?material=silver"
+            >
+              <img class="more" src="./assets/images/morse.jpg" />
+            </a>
+            <a
+              href="http://www.malianghang.com/shop/ones-sdb-necklace/summary?material=silver"
+            >
+              <img class="more" src="./assets/images/side.jpg" />
+            </a>
+          </div>
+          <div class="right">
+            <a
+              href="http://www.malianghang.com/shop/shadow-necklace/summary?material=silver"
+            >
+              <img class="more" src="./assets/images/shadow.jpg"
+            /></a>
+            <a
+              href="http://www.malianghang.com/shop/coordinates-lovers-necklace/summary?material=silver"
+            >
+              <img class="more" src="./assets/images/coordinate.jpg"
+            /></a>
+            <a
+              href="http://www.malianghang.com/shop/soundwave-customize-ring/customizer/material?material=silver"
+              ><img class="more" src="./assets/images/sound.jpeg"
+            /></a>
+          </div>
+        </div>
+        <img src="./assets/images/qrcode.png" alt="" class="qrcode" />
+        <div class="pub">长按识别二维码，关注公众号</div>
       </swiper-slide>
     </swiper>
   </div>
@@ -52,10 +77,10 @@ export default class App extends Vue {
   };
 
   private share = {
-    wstitle: '破译隐藏的“爱你”暗号',
-    wsdesc: '',
+    wstitle: '520闯关——你能破译所有隐藏的表白暗号么',
+    wsdesc: '聪明的你一定懂我',
     wslink: 'https://520.malianghang.com',
-    wsimg: '',
+    wsimg: 'https://cdn520.malianghang.com/img/share.jpg',
   }
 
   mounted() {
@@ -86,6 +111,9 @@ body {
   margin: 0;
   height: 100%;
 }
+img {
+  vertical-align: bottom;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -93,15 +121,22 @@ body {
   text-align: center;
   color: #2c3e50;
   height: 100%;
+  .heart,
+  .bg2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
   .my-swiper {
     height: 100%;
+
     .swiper-slide {
-      background: #fff;
+      background-image: url("./assets/images/bg.jpg");
+      background-size: 100% 100%;
+
       .title {
-        margin: 3rem 0;
-      }
-      .more {
-        width: 48%;
+        margin: 1.2rem 0;
       }
     }
   }
@@ -113,6 +148,37 @@ body {
     left: 50%;
     margin-left: -20px;
     animation: start 1.5s infinite ease-in-out;
+  }
+  .container {
+    position: relative;
+    background: #fff;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    z-index: 2;
+    padding: 6px;
+    .left {
+      width: 50%;
+      float: left;
+    }
+    .right {
+      float: left;
+      width: 50%;
+    }
+    .more {
+      padding: 6px;
+
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  .qrcode {
+    margin: 20px 0 5px;
+    width: 90px;
+  }
+  .pub {
+    font-size: 12px;
+    color: white;
   }
 }
 @keyframes start {

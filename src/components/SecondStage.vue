@@ -1,37 +1,42 @@
 <template>
   <div id="game">
-    <div id="question">隐藏的“爱你”</div>
+    <div id="code">__爱的密码__</div>
+    <div id="question">破译隐藏的"爱你"暗号</div>
     <div id="stage">第二关</div>
-    <div id="tips">{{ tips }}</div>
     <swiper ref="mySwiper" :options="swiperOptions" class="my-swiper2">
       <swiper-slide>
-        <div class="helper">你听说过摩斯密码么</div>
-        <img src="/img/morse.png" alt="" />
+        <img src="../assets/images/1.jpg" alt="" />
       </swiper-slide>
       <swiper-slide>
-        <div class="helper">发现项链中的摩斯密码了么</div>
-        <img src="/img/1.png" alt="" />
+        <img src="../assets/images/2.jpg" alt="" />
       </swiper-slide>
       <swiper-slide>
-        <div class="helper">破译一下是哪三个爱意字母</div>
-        <img src="/img/22.png" alt="" />
+        <img src="../assets/images/3.jpg" alt="" />
       </swiper-slide>
       <swiper-slide>
-        <div id="detail">
-          <div class="helper">猜不出来，看答案</div>
-          <button
-            class="btn"
-            data-clipboard-text="fu至这段话€NhcH1N700eB€转移至氵匋宝或點击链街https://m.tb.cn/h.Viw6hpZ?sm=d5299a 至瀏..覽..噐【马良行摩斯密码定制项链925纯银吊坠男锁骨链女简约颈链情侣礼品】"
-          >
-            点击复制通关码
-          </button>
-          <div class="helper">打开手机淘宝详细解密</div>
+        <img
+          v-show="!copy"
+          class="btn"
+          data-clipboard-text="$ARNC1LvKW3R$"
+          src="../assets/images/4.jpg"
+          alt=""
+        />
+        <div v-show="copy" id="copyed">
+          <img class="bg" src="../assets/images/5.jpg" alt="" />
+          <div class="desc">
+            <div class="ticket">您抽中了100元单品券</div>
+            <div class="result">{{ copyTips }}</div>
+
+            <div class="open">打开手机淘宝探索答案</div>
+          </div>
         </div>
       </swiper-slide>
     </swiper>
     <div id="got">
       <div>我懂了</div>
       <input
+        maxlength="3"
+        class="input"
         type="text"
         v-model="anwser"
         @input="onInput"
@@ -50,7 +55,7 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper/src/index';
 import 'swiper/css/swiper.css';
 import ClipboardJS from 'clipboard';
 
-new ClipboardJS('.btn');
+
 @Component({
   components: {
     Swiper,
@@ -66,6 +71,10 @@ export default class HelloWorld extends Vue {
 
   private pass = false;
 
+  private copy = false;
+
+  private copyTips = '通关码复制成功!';
+
   private swiperOptions = {
     effect: 'coverflow',
     grabCursor: true,
@@ -80,13 +89,40 @@ export default class HelloWorld extends Vue {
     },
   };
 
+
   onInput(): void {
-    if (this.anwser.toLowerCase() === 'lvu') {
-      this.result = '“LVU”(love you)被你发现了!上滑探索更多';
-      this.pass = true;
-    } else if (this.anwser.length === 3) {
-      this.result = '不对哦';
+    const anwser = this.anwser.toLowerCase();
+    if (anwser.length === 1) {
+      if (anwser !== 'l') {
+        this.result = '不对哦';
+      } else {
+        this.result = '还有两个字母';
+      }
+    } else if (anwser.length === 2) {
+      if (anwser !== 'lv') {
+        this.result = '不对哦';
+      } else {
+        this.result = '还有1个字母';
+      }
+    } else if (anwser.length === 3) {
+      if (anwser !== 'lvu') {
+        this.result = '不对哦';
+      } else {
+        this.result = '“LVU”(love you)被你发现了!上滑探索更多';
+        this.pass = true;
+      }
     }
+  }
+
+  mounted() {
+    const clipboard = new ClipboardJS('.btn');
+    clipboard.on('success', () => {
+      this.copy = true;
+    });
+    clipboard.on('error', () => {
+      this.copyTips = '复制通关码：$ARNC1LvKW3R$';
+      this.copy = true;
+    });
   }
 }
 </script>
@@ -98,12 +134,12 @@ export default class HelloWorld extends Vue {
   position: relative;
   height: 100vh;
   #question {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin: 20px 0;
   }
   #stage {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
   }
   #tips {
     margin-bottom: 30px;
@@ -113,28 +149,38 @@ export default class HelloWorld extends Vue {
     .swiper-slide {
       background: #eee;
       width: 80%;
-      height: 260px;
       img {
         width: 100%;
       }
-      .helper {
-        padding: 10px;
-        color: #999;
-      }
-      #detail {
-        .btn {
-          margin-top: 50px;
+      #copyed {
+        position: relative;
+        .desc {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          bottom: 100px;
+          .ticket {
+            margin-bottom: 10px;
+          }
         }
       }
     }
   }
   #got {
-    background: #fff;
+    background: #e988bcb2;
     position: absolute;
     bottom: 0px;
     width: 100%;
     z-index: 1;
     height: 100px;
+    .input {
+      margin-top: 10px;
+      border: none;
+      line-height: 30px;
+      border-radius: 60px;
+      padding-left: 10px;
+      text-align: center;
+    }
   }
 }
 </style>

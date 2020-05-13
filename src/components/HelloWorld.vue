@@ -1,7 +1,5 @@
 <template>
   <div id="game">
-    <img id="bg2" src="../assets/images/bg2.png" alt="" />
-    <img src="../assets/images/heart.png" alt="" id="heart" />
     <div id="code">__爱的密码__</div>
     <div id="question">破译隐藏的"爱你"暗号</div>
     <div id="stage">第一关</div>
@@ -192,8 +190,6 @@ export default class HelloWorld extends Vue {
 #game {
   padding-top: 5vh;
   height: 100%;
-  background-image: url("../assets/images/bg.jpg");
-  background-size: 100% 100%;
   #question {
     font-size: 1.8rem;
     margin: 20px 0;
@@ -271,14 +267,6 @@ export default class HelloWorld extends Vue {
       font-size: 14px;
       color: #555;
     }
-  }
-
-  #heart,
-  #bg2 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
   }
 }
 </style>
