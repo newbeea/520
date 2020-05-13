@@ -1,5 +1,6 @@
 <template>
   <div id="game">
+    <img id="bg2" src="../assets/images/bg2.png" alt="" />
     <img src="../assets/images/heart.png" alt="" id="heart" />
     <div id="code">__爱的密码__</div>
     <div id="question">破译隐藏的"爱你"暗号</div>
@@ -150,6 +151,7 @@ export default class HelloWorld extends Vue {
     this.offset = this.current;
   }
 
+
   mounted(): void {
     this.width = document.documentElement.clientWidth;
     // const vConsole = new VConsole();
@@ -271,7 +273,8 @@ export default class HelloWorld extends Vue {
     }
   }
 
-  #heart {
+  #heart,
+  #bg2 {
     position: absolute;
     bottom: 0;
     left: 0;
