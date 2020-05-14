@@ -98,6 +98,7 @@ export default class App extends Vue {
       }
     };
     xml.send();
+    Vue.prototype.$trackBaiduPv('/app');
   }
 }
 </script>
