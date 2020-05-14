@@ -126,6 +126,7 @@ export default class HelloWorld extends Vue {
         this.svg0.play(1, () => {
           this.playing = false;
           this.svg0.reset();
+          Vue.prototype.$trackBaiduPv('/520');
         });
       }
     }

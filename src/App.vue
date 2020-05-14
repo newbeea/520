@@ -16,16 +16,19 @@
         <div class="container">
           <div class="left">
             <a
+              @click="toMalianghang('520')"
               href="http://www.malianghang.com/shop/infinite-520-necklace/summary?material=silver"
             >
               <img class="more" src="./assets/images/520.jpg" />
             </a>
             <a
+              @click="toMalianghang('morse')"
               href="http://www.malianghang.com/shop/morse-iloveu-necklace/summary/material?material=silver"
             >
               <img class="more" src="./assets/images/morse.jpg" />
             </a>
             <a
+              @click="toMalianghang('side')"
               href="http://www.malianghang.com/shop/ones-sdb-necklace/summary?material=silver"
             >
               <img class="more" src="./assets/images/side.jpg" />
@@ -33,16 +36,19 @@
           </div>
           <div class="right">
             <a
+              @click="toMalianghang('shadow')"
               href="http://www.malianghang.com/shop/shadow-necklace/summary?material=silver"
             >
               <img class="more" src="./assets/images/shadow.jpg"
             /></a>
             <a
+              @click="toMalianghang('coordinate')"
               href="http://www.malianghang.com/shop/coordinates-lovers-necklace/summary?material=silver"
             >
               <img class="more" src="./assets/images/coordinate.jpg"
             /></a>
             <a
+              @click="toMalianghang('sound')"
               href="http://www.malianghang.com/shop/soundwave-customize-ring/summary/material?material=silver"
               ><img class="more" src="./assets/images/sound.jpeg"
             /></a>
@@ -83,6 +89,11 @@ export default class App extends Vue {
     wsimg: 'https://520.malianghang.com/img/share.jpg',
   }
 
+  /* eslint-disable class-methods-use-this */
+  toMalianghang(url: string) {
+    Vue.prototype.$trackBaiduPv(`/malianghang/${url}`);
+  }
+
   mounted() {
     const xml = new XMLHttpRequest();
     const url = window.location.href;
@@ -98,7 +109,6 @@ export default class App extends Vue {
       }
     };
     xml.send();
-    Vue.prototype.$trackBaiduPv('/app');
   }
 }
 </script>
