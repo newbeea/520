@@ -102,7 +102,7 @@ export default class App extends Vue {
 
   mounted() {
     const xml = new XMLHttpRequest();
-    const url = window.location.href;
+    const url = encodeURIComponent(window.location.href);
     xml.open('get', `/wechat-api/config?url=${url}`);
     xml.onreadystatechange = () => {
       if (xml.readyState === 4 && xml.status === 200) {
