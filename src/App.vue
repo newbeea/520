@@ -55,7 +55,7 @@
           </div>
         </div>
         <img src="./assets/images/qrcode.png" alt="" class="qrcode" />
-        <div class="pub">长按识别二维码，关注公众号</div>
+        <div class="pub">长按识别二维码，关注"馬良行"公众号</div>
       </swiper-slide>
     </swiper>
   </div>
