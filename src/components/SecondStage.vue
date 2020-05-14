@@ -114,12 +114,12 @@ export default class HelloWorld extends Vue {
     } else if (anwser.length === 3) {
       if (anwser !== 'lvu') {
         this.result = '不对哦';
+        Vue.prototype.$trackBaiduEvent('action', 'stage2', 'wrong', 5);
       } else {
         this.result = '“LVU”(love you)被你发现了上滑探索更多';
         this.pass = true;
-        Vue.prototype.$trackBaiduPv('/lvu');
+        Vue.prototype.$trackBaiduEvent('action', 'stage2', 'lvu', 5);
       }
-      Vue.prototype.$trackBaiduPv('/try');
     }
   }
 
@@ -127,7 +127,7 @@ export default class HelloWorld extends Vue {
     const clipboard = new ClipboardJS('.btn');
     clipboard.on('success', () => {
       this.copy = true;
-      Vue.prototype.$trackBaiduPv('/code');
+      Vue.prototype.$trackBaiduEvent('action', 'code', 'copyed', 8);
     });
     clipboard.on('error', () => {
       this.copyTips = '复制通关码：$ARNC1LvKW3R$';

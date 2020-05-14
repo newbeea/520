@@ -80,6 +80,12 @@ export default class App extends Vue {
   private swiperOptions = {
     direction: 'vertical',
     touchAngle: 20,
+    on: {
+      activeIndex: 0,
+      slideChange() {
+        Vue.prototype.$trackBaiduPv(`/page-${this.activeIndex}`);
+      },
+    },
   };
 
   private share = {
@@ -91,7 +97,7 @@ export default class App extends Vue {
 
   /* eslint-disable class-methods-use-this */
   toMalianghang(url: string) {
-    Vue.prototype.$trackBaiduPv(`/malianghang/${url}`);
+    Vue.prototype.$trackBaiduEvent('malianghang', 'link', url, 10);
   }
 
   mounted() {

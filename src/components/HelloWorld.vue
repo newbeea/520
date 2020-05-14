@@ -114,6 +114,7 @@ export default class HelloWorld extends Vue {
           this.playing = false;
           this.svg5.reset();
         });
+        Vue.prototype.$trackBaiduEvent('action', 'stage1', '5', 1);
       }
       if (this.last === 2) {
         this.offset = this.current;
@@ -126,8 +127,8 @@ export default class HelloWorld extends Vue {
         this.svg0.play(1, () => {
           this.playing = false;
           this.svg0.reset();
-          Vue.prototype.$trackBaiduPv('/520');
         });
+        Vue.prototype.$trackBaiduEvent('action', 'stage1', '520', 3);
       }
     }
     if (this.current === 18) {
@@ -141,6 +142,7 @@ export default class HelloWorld extends Vue {
           this.playing = false;
           this.svg2.reset();
         });
+        Vue.prototype.$trackBaiduEvent('action', 'stage1', '52', 2);
       }
     }
   }
