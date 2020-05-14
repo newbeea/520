@@ -23,7 +23,7 @@
             </a>
             <a
               @click="toMalianghang('morse')"
-              href="http://www.malianghang.com/shop/morse-iloveu-necklace/summary/material?material=silver"
+              href="http://www.malianghang.com/shop/morse-iloveu-necklace/summary/material?=silver"
             >
               <img class="more" src="./assets/images/morse.jpg" />
             </a>
@@ -49,7 +49,7 @@
             /></a>
             <a
               @click="toMalianghang('sound')"
-              href="http://www.malianghang.com/shop/soundwave-customize-ring/summary/material?material=silver"
+              href="http://www.malianghang.com/shop/soundwave-customize-ring/summary/material?=silver"
               ><img class="more" src="./assets/images/sound.jpeg"
             /></a>
           </div>
