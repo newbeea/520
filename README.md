@@ -23,9 +23,4 @@ npm run build
 ```
 npm run lint
 ```
-<<<<<<< HEAD
 
-2
-=======
-1
->>>>>>> refs/remotes/origin/master
